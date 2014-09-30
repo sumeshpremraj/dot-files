@@ -7,19 +7,6 @@ alias grepr='grep -rl --color '
 alias -g L=" | less "
 alias -g G=" | grep "
 
-# VPN
-alias vpn="sudo openvpn --script-security 2 --config /home/sumesh/Documents/sslvpn.ovpn"
-alias vpn2="echo 'domain internal.directi.com
-search internal.directi.com
-nameserver 172.16.140.34
-nameserver 172.16.140.33' | cat - /etc/resolv.conf | sudo tee /etc/resolv.conf"
-alias vpn3="sudo openvpn --script-security 2 --config /home/sumesh/Documents/ssl.vpn.ovpn"
-
-# VMs
-alias vm1="ssh 172.16.146.39"
-alias vm2="ssh 172.16.146.50"
-alias vm3="ssh 172.16.146.62"
-
 
 # Packages
 alias upd="sudo yum update "
@@ -45,7 +32,6 @@ alias '....'='cd ../../..'
 alias '.....'='cd ../../../..'
 alias c="clear"
 alias cl="clear; ls"
-alias vps="ssh sumesh@162.243.23.239"
 alias ll="ls -la "
 
 # Power mgmt
@@ -61,4 +47,3 @@ alias loc='locate'
 alias service='sudo service '
 alias psp='ps aux|grep ' 
 alias ssh='ssh -v '
-alias upp='ssh puppetmaster-vm1.aus-tx.colo '\''sudo /opt/scripts/gitpull.sh'\'
