@@ -89,3 +89,12 @@ eval "$(pyenv init -)"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+settitle() {
+	    printf "\033k$1\033\\"
+}
+ssh() {
+	    settitle "$*"
+	    command ssh "$@"
+	    settitle "bash"
+}

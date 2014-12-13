@@ -29,5 +29,5 @@ set showmode
 set showcmd
 set nobackup
 set noswapfile
-autocmd filetype python set expandtab
+"autocmd filetype python set expandtab
 set pastetoggle=<F2>

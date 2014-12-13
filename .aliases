@@ -1,16 +1,15 @@
-alias grl='grep -rl '
-alias p='cd ~/repos/puppet'
+alias grl='grep -rl --color '
 alias x="exit"
 alias sudo="sudo "
 alias grep='grep --color '
-alias grepr='grep -rl --color '
+
+# Works with zsh
 alias -g L=" | less "
 alias -g G=" | grep "
 
-
 # Packages
 alias upd="sudo yum update "
-alias ins="sudo yum install "
+alias ins="sudo yum install --disablerepo=livna,google-chrome,infinality,infinality-noarch,mattdm-fiinalterm,rpmfusion-free-updates,rpmfusion-nonfree-updates "
 
 # IP lookups
 alias mypip="curl icanhazip.com"
@@ -20,8 +19,8 @@ alias server="sudo python -m SimpleHTTPServer 80"
 alias tf="tail -f"
 
 alias digs="dig +short "
-alias v="vim "
-alias vr="vim -R"
+alias vi="vim "
+alias vir="vim -R"
 alias sv='sudo vim '
 alias tree="git log --graph --decorate --pretty=oneline --abbrev-commit"
 
@@ -30,7 +29,6 @@ alias '..'='cd ..'
 alias '...'='cd ../..'
 alias '....'='cd ../../..'
 alias '.....'='cd ../../../..'
-alias c="clear"
 alias cl="clear; ls"
 alias ll="ls -la "
 
@@ -39,11 +37,30 @@ alias hib='systemctl hibernate'
 alias sus='systemctl suspend'
 alias reb='reboot'
 alias off='poweroff'
+
 # To logout, press Mod+shift+e (like exit).
 
 
 alias fuck='sudo $(history -p \!\!)' 
 alias loc='locate'
 alias service='sudo service '
+
 alias psp='ps aux|grep ' 
-alias ssh='ssh -v '
+alias sshv='ssh -vvv '
+alias wc='wc -l'
+
+alias pgg='echo "Pinging google.com..."; ping google.com'
+
+# Screen
+alias sls='screen -ls'
+alias sca='screen -dRR'
+
+# Tmux
+alias tls='tmux ls'
+alias tma='tmux a'
+
+# Git
+alias gso='git show '
+
+# Add files and then push "MESSAGE"
+push () { git pull && git commit -m "$1" && git push }
