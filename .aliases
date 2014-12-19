@@ -1,9 +1,6 @@
 alias grl='grep -rl --color '
 alias x="exit"
-alias sudo="sudo "
 alias grep='grep --color '
-
-# Works with zsh
 alias -g L=" | less "
 alias -g G=" | grep "
 
@@ -19,8 +16,8 @@ alias server="sudo python -m SimpleHTTPServer 80"
 alias tf="tail -f"
 
 alias digs="dig +short "
-alias vi="vim "
-alias vir="vim -R"
+alias v="vim "
+alias vr="vim -R"
 alias sv='sudo vim '
 alias tree="git log --graph --decorate --pretty=oneline --abbrev-commit"
 
@@ -37,19 +34,17 @@ alias hib='systemctl hibernate'
 alias sus='systemctl suspend'
 alias reb='reboot'
 alias off='poweroff'
-
 # To logout, press Mod+shift+e (like exit).
 
 
 alias fuck='sudo $(history -p \!\!)' 
 alias loc='locate'
 alias service='sudo service '
-
 alias psp='ps aux|grep ' 
 alias sshv='ssh -vvv '
 alias wc='wc -l'
-
 alias pgg='echo "Pinging google.com..."; ping google.com'
+alias xbox='ssh -Av xbox'
 
 # Screen
 alias sls='screen -ls'
@@ -61,6 +56,4 @@ alias tma='tmux a'
 
 # Git
 alias gso='git show '
-
-# Add files and then push "MESSAGE"
 push () { git pull && git commit -m "$1" && git push }
