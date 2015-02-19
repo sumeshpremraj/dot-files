@@ -1,0 +1,13 @@
+[user]
+	name = Sumesh P
+	email = sumeshpremraj@gmail.com
+[color]
+    ui = auto
+[color "status"]
+    changed = blue
+    untracked = cyan
+    added = green
+[format]
+    pretty = %C(yellow)%h%Creset %s %C(green) %an %Creset %C(cyan)%cr%Creset
+[push]
+    default = matching

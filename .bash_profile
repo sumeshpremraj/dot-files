@@ -10,3 +10,4 @@ fi
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 export PATH
+xrandr --addmode DP-0-1 1920x1080

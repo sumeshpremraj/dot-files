@@ -1,12 +1,18 @@
+if [[ -n "$ZSH_NAME" ]]
+then
+    alias -g L=" | less "
+    alias -g G=" | grep "
+fi
 alias grl='grep -rl --color '
+alias w='cd ~/code/work/puppet'
+alias p='cd ~/code/personal'
 alias x="exit"
 alias grep='grep --color '
-alias -g L=" | less "
-alias -g G=" | grep "
 
 # Packages
 alias upd="sudo yum update "
-alias ins="sudo yum install --disablerepo=livna,google-chrome,infinality,infinality-noarch,mattdm-fiinalterm,rpmfusion-free-updates,rpmfusion-nonfree-updates "
+alias uins='sudo apt-get install '
+alias uupd='sudo apt-get update; sudo apt-get upgrade'
 
 # IP lookups
 alias mypip="curl icanhazip.com"
@@ -19,7 +25,6 @@ alias digs="dig +short "
 alias v="vim "
 alias vr="vim -R"
 alias sv='sudo vim '
-alias tree="git log --graph --decorate --pretty=oneline --abbrev-commit"
 
 # cd by .. or ... or ... or mv file ..../.
 alias '..'='cd ..'
@@ -29,6 +34,7 @@ alias '.....'='cd ../../../..'
 alias cl="clear; ls"
 alias ll="ls -la "
 
+# For i3
 # Power mgmt
 alias hib='systemctl hibernate'
 alias sus='systemctl suspend'
@@ -40,11 +46,11 @@ alias off='poweroff'
 alias fuck='sudo $(history -p \!\!)' 
 alias loc='locate'
 alias service='sudo service '
-alias psp='ps aux|grep ' 
+alias psg='ps aux|grep ' 
 alias sshv='ssh -vvv '
 alias wc='wc -l'
+
 alias pgg='echo "Pinging google.com..."; ping google.com'
-alias xbox='ssh -Av xbox'
 
 # Screen
 alias sls='screen -ls'
@@ -52,8 +58,10 @@ alias sca='screen -dRR'
 
 # Tmux
 alias tls='tmux ls'
-alias tma='tmux a'
+alias tma='tmux a || tmux new'
 
 # Git
 alias gso='git show '
-push () { git pull && git commit -m "$1" && git push }
+function push { git pull && git commit -m "$1" && git push }
+alias commits="p; git log --oneline --decorate --color --author=sumesh.p"
+alias gla='git log'
