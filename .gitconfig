@@ -8,6 +8,6 @@
     untracked = cyan
     added = green
 [format]
-    pretty = %C(yellow)%h%Creset %s %C(green) %an %Creset %C(cyan)%cr%Creset
+    #pretty = %C(yellow)%h%Creset %s %C(green) %an %Creset %C(cyan)%cr%Creset
 [push]
     default = matching

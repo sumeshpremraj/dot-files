@@ -64,4 +64,4 @@ alias tma='tmux a || tmux new'
 alias gso='git show '
 function push { git pull && git commit -m "$1" && git push }
 alias commits="p; git log --oneline --decorate --color --author=sumesh.p"
-alias gla='git log'
+alias gla='git log --pretty=%C(yellow)%h%Creset %s %C(green) %an %Creset %C(cyan)%cr%Creset'
