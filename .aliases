@@ -1,30 +1,29 @@
 if [[ -n "$ZSH_NAME" ]]
 then
-    alias -g L=" | less "
-    alias -g G=" | grep "
+    alias -g L=" less "
+    alias -g G=" grep "
 fi
 alias grl='grep -rl --color '
 alias w='cd ~/code/work/puppet'
 alias p='cd ~/code/personal'
 alias x="exit"
-alias grep='grep --color '
+alias s="sudo -E "
 
 # Packages
-alias upd="sudo yum update "
-alias uins='sudo apt-get install '
-alias uupd='sudo apt-get update; sudo apt-get upgrade'
+alias up="sudo yum update "
+alias in="sudo yum install "
+alias yus="sudo yum search " 
 
 # IP lookups
 alias mypip="curl icanhazip.com"
 alias myip="hostname -I"
 
-alias server="sudo python -m SimpleHTTPServer 80"
+alias server="sudo python -m SimpleHTTPServer "
 alias tf="tail -f"
 
 alias digs="dig +short "
 alias v="vim "
 alias vr="vim -R"
-alias sv='sudo vim '
 
 # cd by .. or ... or ... or mv file ..../.
 alias '..'='cd ..'
@@ -34,7 +33,6 @@ alias '.....'='cd ../../../..'
 alias cl="clear; ls"
 alias ll="ls -la "
 
-# For i3
 # Power mgmt
 alias hib='systemctl hibernate'
 alias sus='systemctl suspend'
@@ -46,11 +44,12 @@ alias off='poweroff'
 alias fuck='sudo $(history -p \!\!)' 
 alias loc='locate'
 alias service='sudo service '
-alias psg='ps aux|grep ' 
+alias psp='ps aux|grep ' 
 alias sshv='ssh -vvv '
 alias wc='wc -l'
 
 alias pgg='echo "Pinging google.com..."; ping google.com'
+alias xbox='ssh -A xbox'
 
 # Screen
 alias sls='screen -ls'
@@ -62,6 +61,14 @@ alias tma='tmux a || tmux new'
 
 # Git
 alias gso='git show '
-function push { git pull && git commit -m "$1" && git push }
-alias commits="p; git log --oneline --decorate --color --author=sumesh.p"
-alias gla='git log --pretty=%C(yellow)%h%Creset %s %C(green) %an %Creset %C(cyan)%cr%Creset'
+function push { git pull && git commit -m "$1" && git push; }
+alias gla='git log --format="%C(yellow)%h%Creset %s %C(green) %an %Creset %C(cyan)%cr%Creset"'
+alias mirror="wget --mirror --convert-links --adjust-extension --page-requisites --no-parent "
+
+alias psg="ps aux|egrep -i "
+
+# Open with
+alias -s sh='vim '
+alias -s py='vim '
+alias -s pp='vim '
+alias -s rb='vim '
