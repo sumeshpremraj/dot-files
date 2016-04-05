@@ -11,3 +11,16 @@
     #pretty = %C(yellow)%h%Creset %s %C(green) %an %Creset %C(cyan)%cr%Creset
 [push]
     default = matching
+[core]
+	editor = vim
+	autocrlf = false
+[url "git@gitlab.ops.directi.com:teamslant/"]
+    insteadOf = slant:
+[url "git@gitlab.ops.directi.com:teamslant/"]
+    insteadOf = slant:
+[url "git@gitlab.ops.directi.com:teamslant/"]
+    insteadOf = slant:
+[url "git@gitlab.ops.directi.com:teamslant/"]
+    insteadOf = slant:
+[url "git@gitlab.ops.directi.com:teamslant/"]
+    insteadOf = slant:

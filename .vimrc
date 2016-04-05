@@ -1,3 +1,25 @@
+set t_ut= " clear t_ut to disable background erase
+" spaces over tabs, any day.
+set tabstop=4
+set expandtab
+set autoindent 
+set shiftwidth=4
+set softtabstop=4
+set pastetoggle=<F2>
+set showmode
+set showcmd
+set smartcase
+set incsearch
+set hlsearch
+set ignorecase
+
+set number
+set nobackup
+set noswapfile
+
+set laststatus=2    " Enable statusline
+
+set statusline+=%F  " Show absolute file path
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -14,6 +36,10 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'puppetlabs/puppet-syntax-vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'chase/vim-ansible-yaml'
+Plugin 'bling/vim-airline'
+"Plugin 'scrooloose/syntastic'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -49,28 +75,6 @@ filetype plugin indent on    " required
 syntax on
 set smartindent
 
-set t_ut= " clear t_ut to disable background erase
-" spaces over tabs, any day.
-set tabstop=4
-set expandtab
-set autoindent 
-set shiftwidth=4
-set softtabstop=4
-set pastetoggle=<F2>
-set showmode
-set showcmd
-set smartcase
-set incsearch
-set hlsearch
-set ignorecase
-
-set number
-set nobackup
-set noswapfile
-
-set laststatus=2    " Enable statusline
-
-set statusline+=%F  " Show absolute file path
 
 " From Learn VM
 " turn off auto adding comments on next line
@@ -83,18 +87,20 @@ set bg=dark
 " Colors
 set t_Co=256 " redundant
 set background=dark
-let g:solarized_termcolors = 256  " New line!!
+let g:solarized_termcolors = 256 
 "colorscheme solarized " | distinguished |  elflord
-"colorscheme distinguished
-colorscheme twilight256 
+"colorscheme twilight256 
+"colorscheme elflord 
+"colorscheme solarized
+colorscheme distinguished
 
 " set default comment color to cyan instead of darkblue which is not very legible on a black background
 highlight comment ctermfg=cyan
 
-highlight LiteralTabs ctermbg=darkgreen guibg=darkgreen
-match LiteralTabs /\s\  /
-highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-match ExtraWhitespace /\s\+$/
+"highlight LiteralTabs ctermbg=darkgreen guibg=darkgreen
+"match LiteralTabs /\s\  /
+"highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+"match ExtraWhitespace /\s\+$/
 
 " Show me a ruler
 set ruler
@@ -108,9 +114,25 @@ au BufRead,BufNewFile *_spec.rb
 " NERDTree tweaks
 map <C-n> :NERDTreeToggle<CR>
 
+" Switch between tabs in NERDTree
+map  <C-l> :tabn<CR>
+map  <C-h> :tabp<CR>
+
 " Close if no tabs open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Open nerdtree if no file specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+
+"Syntactic options
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_python_checkers = ['flake8']
