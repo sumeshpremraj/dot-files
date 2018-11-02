@@ -14,13 +14,3 @@
 [core]
 	editor = vim
 	autocrlf = false
-[url "git@gitlab.ops.directi.com:teamslant/"]
-    insteadOf = slant:
-[url "git@gitlab.ops.directi.com:teamslant/"]
-    insteadOf = slant:
-[url "git@gitlab.ops.directi.com:teamslant/"]
-    insteadOf = slant:
-[url "git@gitlab.ops.directi.com:teamslant/"]
-    insteadOf = slant:
-[url "git@gitlab.ops.directi.com:teamslant/"]
-    insteadOf = slant:

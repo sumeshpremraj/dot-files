@@ -1,6 +1,7 @@
 set t_ut= " clear t_ut to disable background erase
 " spaces over tabs, any day.
 set tabstop=4
+set backspace=indent,eol,start " Get backspace working
 set expandtab
 set autoindent 
 set shiftwidth=4
@@ -12,6 +13,7 @@ set smartcase
 set incsearch
 set hlsearch
 set ignorecase
+set paste
 
 set number
 set nobackup
@@ -34,17 +36,16 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'puppetlabs/puppet-syntax-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'bling/vim-airline'
-"Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-"Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -82,17 +83,14 @@ set smartindent
 " http://vimdoc.sourceforge.net/htmldoc/change.html#fo-table
 set fo=tcq
 set modeline
-set bg=dark
 
 " Colors
-set t_Co=256 " redundant
+if $TERM == "xterm-256color"
+  set t_Co=256
+endif
+let g:solarized_termcolors=256
 set background=dark
-let g:solarized_termcolors = 256 
-"colorscheme solarized " | distinguished |  elflord
-"colorscheme twilight256 
-"colorscheme elflord 
-"colorscheme solarized
-colorscheme distinguished
+colorscheme solarized
 
 " set default comment color to cyan instead of darkblue which is not very legible on a black background
 highlight comment ctermfg=cyan
@@ -125,6 +123,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+" Show trailing whitepace and spaces before a tab:
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
 
 "Syntactic options
 "set statusline+=%#warningmsg#
